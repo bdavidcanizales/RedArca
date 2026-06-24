@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RedArca — Plataforma de comunicación mesh resiliente. Sin internet. Sin servidores. Sin identidad real.">
+    <title>RedArca — Manifiesto de Privacidad</title>
+    <style>
+        :root {
+            --bg:       #0d1117;
+            --surface:  #161b22;
+            --border:   #30363d;
+            --text:     #e6edf3;
+            --dim:      #8b949e;
+            --accent:   #f0c040;
+            --green:    #3fb950;
+            --red:      #f85149;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        header {
+            text-align: center;
+            padding: 56px 0 36px;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            letter-spacing: 4px;
+        }
+        .tagline {
+            color: var(--dim);
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+        .hero-sub {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: var(--dim);
+            font-style: italic;
+        }
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+        section { margin-bottom: 44px; }
+        h2 {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        p {
+            color: var(--dim);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        ul { list-style: none; }
+        ul li {
+            display: flex;
+            gap: 12px;
+            padding: 5px 0;
+            color: var(--dim);
+            font-size: 0.95rem;
+            align-items: flex-start;
+        }
+        ul li .icon { flex-shrink: 0; margin-top: 2px; }
+        ul.no   li .icon { color: var(--red); }
+        ul.yes  li .icon { color: var(--green); }
+        ul.info li .icon { color: var(--dim); }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .card p { margin: 0; font-size: 0.9rem; }
+        code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            color: var(--accent);
+            background: var(--surface);
+            padding: 10px 16px;
+            border-radius: 6px;
+            display: block;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+        .notice {
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 20px 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .notice p {
+            margin: 0;
+            color: var(--dim);
+            font-size: 0.9rem;
+        }
+        .notice strong { color: var(--text); }
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            color: var(--dim);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        .version {
+            display: inline-block;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            color: var(--dim);
+            margin-top: 8px;
+        }
+        @media (max-width: 480px) {
+            .logo { font-size: 2.2rem; }
+            header { padding: 40px 0 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">RedArca</div>
+    <p class="tagline">Comunicación resiliente · Sin internet · Sin servidores · Sin identidad real</p>
+    <p class="hero-sub">Cuando el mundo falla, RedArca funciona.</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>¿Qué es RedArca?</h2>
+        <p>RedArca es una plataforma de comunicación que opera mediante una red mesh Bluetooth Low Energy (BLE). Funciona sin internet, sin servidores centralizados y sin revelar tu identidad real.</p>
+        <p>Está diseñada para comunicación en emergencias, desastres naturales, zonas sin conectividad y entornos educativos donde la infraestructura tradicional no está disponible o no es confiable.</p>
+    </section>
+
+    <section>
+        <h2>Lo que RedArca NO hace</h2>
+        <ul class="no">
+            <li><span class="icon">✕</span> Leer el contenido de tus mensajes</li>
+            <li><span class="icon">✕</span> Identificarte como persona real</li>
+            <li><span class="icon">✕</span> Reportar tu actividad a terceros</li>
+            <li><span class="icon">✕</span> Guardar conversaciones en servidores externos</li>
+            <li><span class="icon">✕</span> Conectarse a servicios de análisis o publicidad</li>
+            <li><span class="icon">✕</span> Actualizarse sin tu conocimiento y consentimiento</li>
+            <li><span class="icon">✕</span> Recopilar ni vender datos de ningún tipo</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Transparencia total — lo que RedArca SÍ hace</h2>
+        <ul class="yes">
+            <li><span class="icon">✓</span> Cifra todos los mensajes con AES-256-GCM y ECDH — solo el destinatario puede leerlos</li>
+            <li><span class="icon">✓</span> Genera una identidad anónima local (sin nombre real, email ni teléfono)</li>
+            <li><span class="icon">✓</span> Retransmite mensajes cifrados entre dispositivos BLE cercanos sin poder leer su contenido</li>
+            <li><span class="icon">✓</span> Usa internet opcionalmente para relay temporal propio — los mensajes se eliminan del servidor al ser recibidos</li>
+            <li><span class="icon">✓</span> Permite agregar contactos mediante códigos de 6 dígitos válidos por 30 minutos</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cifrado de extremo a extremo</h2>
+        <div class="card">
+            <div class="card-title">Mensajes</div>
+            <p>Cifrados con AES-256-GCM usando claves de sesión derivadas por intercambio ECDH. Los dispositivos que retransmiten el mensaje nunca pueden leer su contenido.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Identidad</div>
+            <p>Firmada digitalmente con ECDSA (secp256r1) almacenada en AndroidKeyStore. Las claves privadas nunca salen del dispositivo.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Base de datos</div>
+            <p>Cifrada con SQLCipher (AES-256) protegida por tu PIN. Sin el PIN correcto, los datos son ilegibles incluso con acceso físico al dispositivo.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">Relay de internet</div>
+            <p>Cuando se usa el relay propio, los mensajes viajan cifrados. El servidor no puede leer el contenido. Los mensajes se eliminan automáticamente al ser recibidos.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Respuesta a solicitudes legales</h2>
+        <p>Si una autoridad competente presenta una solicitud legal formal:</p>
+        <ul class="info">
+            <li><span class="icon">·</span> Solo podemos entregar metadatos de conexión al servidor relay, si existen y no han expirado</li>
+            <li><span class="icon">·</span> No podemos entregar el contenido de mensajes — está cifrado con claves que únicamente el usuario posee</li>
+            <li><span class="icon">·</span> No existe historial de conversaciones en nuestros servidores — los mensajes relay se eliminan al recibirse</li>
+            <li><span class="icon">·</span> Los mensajes enviados por BLE nunca pasan por nuestros servidores</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Lo que RedArca no puede protegerte</h2>
+        <ul class="info">
+            <li><span class="icon">·</span> Análisis de tráfico externo — un observador con múltiples sensores BLE puede detectar presencia de dispositivos</li>
+            <li><span class="icon">·</span> Acceso físico al dispositivo con PIN conocido</li>
+            <li><span class="icon">·</span> Reloj del sistema muy desincronizado — puede afectar la protección anti-repetición de mensajes</li>
+            <li><span class="icon">·</span> El sistema operativo Android deteniendo el servicio en dispositivos con optimizaciones agresivas de batería</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Verificación pública</h2>
+        <p>Cualquier persona técnica puede verificar que RedArca no solicita el permiso INTERNET para mensajería BLE:</p>
+        <code>aapt dump permissions redarca.apk</code>
+        <p style="margin-top: 14px;">El hash SHA-256 de cada versión del APK se publica junto al archivo de distribución.</p>
+    </section>
+
+    <section>
+        <h2>Uso aceptable</h2>
+        <p>RedArca es una herramienta de comunicación para situaciones donde la infraestructura de telecomunicaciones no está disponible o no es confiable. Su uso está permitido para comunicación legítima, emergencias, privacidad personal y educación.</p>
+        <p>Queda prohibido su uso para actividades ilegales según las leyes del país del usuario. La responsabilidad por el contenido de los mensajes recae exclusivamente en quien los genera y envía.</p>
+    </section>
+
+    <div class="notice">
+        <p><strong>Al instalar y usar RedArca aceptas estos términos.</strong></p>
+        <p style="margin-top: 8px;">RedArca no registra tu aceptación — no existe rastreo de ella. Es un compromiso entre tú y el uso responsable de la herramienta.</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>RedArca · Desarrollado por <strong>DARCA</strong></p>
+    <p style="margin-top: 6px;">
+        <a href="mailto:davidcanizales@gmail.com">Contacto</a>
+    </p>
+    <p style="margin-top: 20px; font-size: 0.78rem; color: #484f58;">
+        Esta página no usa cookies · Sin rastreo · Sin análisis de visitas
+    </p>
+</footer>
+
+</body>
+</html>
