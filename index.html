@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RedArca — Plataforma de comunicación mesh resiliente. Sin internet. Sin servidores. Sin identidad real.">
-    <title>RedArca — Manifiesto de Privacidad</title>
+    <title>RedArca — Comunicación mesh resiliente</title>
     <style>
         :root {
             --bg:       #0d1117;
@@ -15,6 +15,7 @@
             --accent:   #f0c040;
             --green:    #3fb950;
             --red:      #f85149;
+            --blue:     #58a6ff;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -79,6 +80,7 @@
         ul.no   li .icon { color: var(--red); }
         ul.yes  li .icon { color: var(--green); }
         ul.info li .icon { color: var(--dim); }
+        ul.evolving li .icon { color: var(--blue); }
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -102,6 +104,7 @@
             display: block;
             font-size: 0.85rem;
             border: 1px solid var(--border);
+            word-break: break-all;
         }
         .notice {
             background: var(--surface);
@@ -127,19 +130,118 @@
             margin: 0 auto;
         }
         footer a { color: var(--accent); text-decoration: none; }
-        .version {
-            display: inline-block;
+
+        /* ── Descarga ─────────────────────────────────────────────── */
+        .download-box {
             background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 2px 8px;
-            font-size: 0.8rem;
-            color: var(--dim);
-            margin-top: 8px;
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 28px 24px;
+            margin-bottom: 12px;
         }
+        .download-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            margin-bottom: 24px;
+        }
+        .meta-item { display: flex; flex-direction: column; gap: 2px; }
+        .meta-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dim);
+        }
+        .meta-value {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .meta-value.version { color: var(--accent); font-weight: 700; }
+        .sha-row {
+            margin-bottom: 24px;
+        }
+        .sha-row .meta-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dim);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: #0d1117;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: opacity 0.15s;
+        }
+        .btn-primary:hover { opacity: 0.88; }
+        .btn-secondary {
+            display: inline-block;
+            padding: 9px 18px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 0.88rem;
+            border-radius: 6px;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+        /* ── Estado ───────────────────────────────────────────────── */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: rgba(240,192,64,0.15);
+            color: var(--accent);
+            border: 1px solid rgba(240,192,64,0.3);
+            margin-bottom: 18px;
+        }
+
+        /* ── Instalación ──────────────────────────────────────────── */
+        .steps { counter-reset: step; }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .step-text { color: var(--dim); font-size: 0.95rem; line-height: 1.6; }
+        .step-text strong { color: var(--text); }
+
         @media (max-width: 480px) {
             .logo { font-size: 2.2rem; }
             header { padding: 40px 0 28px; }
+            .download-meta { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -153,6 +255,115 @@
 
 <main>
 
+    <!-- ── DESCARGA ──────────────────────────────────────────────── -->
+    <section>
+        <h2>Descarga</h2>
+        <div class="download-box">
+            <div class="download-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Versión actual</span>
+                    <span class="meta-value version">v1.0.0 Beta</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Android requerido</span>
+                    <span class="meta-value">Android 11 (API 30) o superior</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tamaño del APK</span>
+                    <span class="meta-value">18 MB</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Fecha de compilación</span>
+                    <span class="meta-value">30 de junio de 2026</span>
+                </div>
+            </div>
+            <div class="sha-row">
+                <span class="meta-label">SHA-256</span>
+                <code>a48fb52aa0f2dd448322d34d82f1ca01c22a2a2dca56d463ac9c1d4d4362a822</code>
+            </div>
+            <a class="btn-primary" href="redarca-beta.apk" download>Descargar APK</a>
+            <div class="btn-row">
+                <a class="btn-secondary" href="#notas">Notas de la versión</a>
+                <a class="btn-secondary" href="#instalacion">Cómo instalar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ESTADO DEL PROYECTO ──────────────────────────────────── -->
+    <section>
+        <h2>Estado del proyecto</h2>
+        <div class="badge">Beta pública</div>
+        <div class="card" style="margin-bottom:10px">
+            <div class="card-title">Funciones disponibles</div>
+            <ul class="yes" style="margin-top:10px">
+                <li><span class="icon">✓</span> Chats privados cifrados (BLE mesh)</li>
+                <li><span class="icon">✓</span> Grupos con cifrado de grupo</li>
+                <li><span class="icon">✓</span> Avatares y foto de perfil</li>
+                <li><span class="icon">✓</span> Relay opcional por internet propio</li>
+                <li><span class="icon">✓</span> Descubrimiento automático BLE</li>
+                <li><span class="icon">✓</span> Mensajes cifrados extremo a extremo</li>
+                <li><span class="icon">✓</span> Identidad anónima local</li>
+                <li><span class="icon">✓</span> Verificación de contactos por código QR</li>
+                <li><span class="icon">✓</span> Actualizaciones automáticas con verificación SHA-256</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-title">Funciones en evolución</div>
+            <ul class="evolving" style="margin-top:10px">
+                <li><span class="icon">·</span> Optimización de consumo energético</li>
+                <li><span class="icon">·</span> Sincronización avanzada de contactos</li>
+                <li><span class="icon">·</span> Mejoras de rendimiento BLE en dispositivos antiguos</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── INSTALACIÓN ───────────────────────────────────────────── -->
+    <section id="instalacion">
+        <h2>Instalación</h2>
+        <p>RedArca se distribuye directamente — sin tiendas de aplicaciones. Sigue estos pasos:</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">Descarga el APK usando el botón de arriba.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">Abre el archivo descargado. Si Android solicita permiso para instalar aplicaciones externas, ve a <strong>Configuración → Aplicaciones → RedArca → Instalar apps desconocidas</strong> y actívalo.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">Toca <strong>Instalar</strong> y espera a que finalice.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-text">Abre RedArca y configura un <strong>alias</strong> (nunca se vincula a tu identidad real).</div>
+            </div>
+            <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-text">Opcionalmente, elige una <strong>foto de perfil</strong>.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">6</div>
+                <div class="step-text">Activa Bluetooth. RedArca descubrirá automáticamente otros dispositivos cercanos con RedArca instalado.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NOTAS DE LA VERSIÓN ───────────────────────────────────── -->
+    <section id="notas">
+        <h2>Notas de la versión — v1.0.0 Beta</h2>
+        <ul class="yes">
+            <li><span class="icon">✓</span> Primera versión beta pública</li>
+            <li><span class="icon">✓</span> Mensajería BLE mesh cifrada de extremo a extremo</li>
+            <li><span class="icon">✓</span> Grupos con invitaciones por red mesh</li>
+            <li><span class="icon">✓</span> Foto de perfil con propagación por BLE</li>
+            <li><span class="icon">✓</span> Verificación de identidad por código QR</li>
+            <li><span class="icon">✓</span> Relay de mensajes por internet (opcional, servidor propio)</li>
+            <li><span class="icon">✓</span> Actualizaciones automáticas con verificación de integridad SHA-256</li>
+        </ul>
+    </section>
+
+    <!-- ── QUÉ ES ─────────────────────────────────────────────────── -->
     <section>
         <h2>¿Qué es RedArca?</h2>
         <p>RedArca es una plataforma de comunicación que opera mediante una red mesh Bluetooth Low Energy (BLE). Funciona sin internet, sin servidores centralizados y sin revelar tu identidad real.</p>
@@ -227,8 +438,9 @@
     <section>
         <h2>Verificación pública</h2>
         <p>Cualquier persona técnica puede verificar que RedArca no solicita el permiso INTERNET para mensajería BLE:</p>
-        <code>aapt dump permissions redarca.apk</code>
-        <p style="margin-top: 14px;">El hash SHA-256 de cada versión del APK se publica junto al archivo de distribución.</p>
+        <code>aapt dump permissions redarca-beta.apk</code>
+        <p style="margin-top: 14px;">El hash SHA-256 de cada versión del APK se publica junto al archivo de distribución. Puedes verificarlo localmente:</p>
+        <code>certutil -hashfile redarca-beta.apk SHA256</code>
     </section>
 
     <section>
@@ -256,3 +468,4 @@
 
 </body>
 </html>
+
