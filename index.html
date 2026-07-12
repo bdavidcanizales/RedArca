@@ -7,20 +7,25 @@
     <title>RedArca — Comunicación mesh resiliente</title>
     <style>
         :root {
-            --bg:       #0d1117;
-            --surface:  #161b22;
-            --border:   #30363d;
-            --text:     #e6edf3;
-            --dim:      #8b949e;
-            --accent:   #f0c040;
-            --green:    #3fb950;
-            --red:      #f85149;
-            --blue:     #58a6ff;
+            --bg:       #0B1220;
+            --surface:  #111827;
+            --card:     #1F2937;
+            --border:   #374151;
+            --text:     #F9FAFB;
+            --dim:      #9CA3AF;
+            --accent:   #4DA3FF;
+            --cyan:     #40C4FF;
+            --green:    #22C55E;
+            --red:      #EF4444;
+            --blue:     #4DA3FF;
+            --grad:     linear-gradient(120deg, #4DA3FF 0%, #40C4FF 100%);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             background: var(--bg);
+            background-image: radial-gradient(1100px 520px at 50% -180px, rgba(64,196,255,0.13), transparent 70%);
+            background-attachment: fixed;
             color: var(--text);
             line-height: 1.7;
             padding: 0 20px;
@@ -30,11 +35,23 @@
             padding: 56px 0 36px;
             border-bottom: 1px solid var(--border);
         }
+        .app-icon {
+            width: 104px;
+            height: 104px;
+            border-radius: 24px;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 44px rgba(64,196,255,0.28);
+        }
         .logo {
             font-size: 3rem;
             font-weight: 900;
-            color: var(--accent);
             letter-spacing: 4px;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
         .tagline {
             color: var(--dim);
@@ -173,17 +190,18 @@
             display: block;
             width: 100%;
             padding: 14px;
-            background: var(--accent);
-            color: #0d1117;
+            background: var(--grad);
+            color: #061018;
             text-align: center;
             text-decoration: none;
             font-weight: 700;
             font-size: 1rem;
             border-radius: 8px;
             margin-bottom: 10px;
-            transition: opacity 0.15s;
+            box-shadow: 0 6px 22px rgba(64,196,255,0.25);
+            transition: opacity 0.15s, box-shadow 0.15s;
         }
-        .btn-primary:hover { opacity: 0.88; }
+        .btn-primary:hover { opacity: 0.92; box-shadow: 0 8px 30px rgba(64,196,255,0.38); }
         .btn-secondary {
             display: inline-block;
             padding: 9px 18px;
@@ -206,9 +224,9 @@
             font-size: 0.78rem;
             font-weight: 600;
             letter-spacing: 0.5px;
-            background: rgba(240,192,64,0.15);
+            background: rgba(77,163,255,0.13);
             color: var(--accent);
-            border: 1px solid rgba(240,192,64,0.3);
+            border: 1px solid rgba(77,163,255,0.35);
             margin-bottom: 18px;
         }
 
@@ -248,6 +266,7 @@
 <body>
 
 <header>
+    <img class="app-icon" src="ic_launcher.png" alt="RedArca" width="104" height="104">
     <div class="logo">RedArca</div>
     <p class="tagline">Comunicación resiliente · Sin internet · Sin servidores · Sin identidad real</p>
     <p class="hero-sub">Cuando el mundo falla, RedArca funciona.</p>
@@ -328,7 +347,7 @@
             </div>
             <div class="step">
                 <div class="step-num">2</div>
-                <div class="step-text">Abre el archivo descargado. Si Android solicita permiso para instalar aplicaciones externas, ve a <strong>Configuración → Aplicaciones → RedArca → Instalar apps desconocidas</strong> y actívalo.</div>
+                <div class="step-text">Abre el archivo descargado. Si Android solicita permiso para instalar aplicaciones externas, ve a <strong>Configuración → Aplicaciones → Instalar apps desconocidas</strong> y actívalo.</div>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
@@ -468,4 +487,3 @@
 
 </body>
 </html>
-
